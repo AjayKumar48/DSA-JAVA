@@ -241,6 +241,22 @@ class RecursionBasics{
 
 
 // Question 5 : TOWER OF HANOI (Important!)
+    public static void towerOfHanoi(int n, String source, String helper, String destination){
+        if(n == 1){
+            System.out.println("transfer disk " + n + " from " + source + " to " + destination);
+            return;
+        }
+
+//  transfer n-1 disks in helper using destination as helper
+        towerOfHanoi(n-1, source, destination, helper);
+        System.out.println("transfer disk " + n + " from " + source + " to " + helper);
+
+//  transfer n-1 disks in destionation from helper
+        towerOfHanoi(n-1, helper, source, destination);
+
+    }
+
+
 
 
     public static void main(String args[]){
@@ -332,7 +348,9 @@ class RecursionBasics{
     // System.out.println(subStr(str));
 
 
-
+// Question 5
+    // int n = 3;
+    // towerOfHanoi(n, "A", "B", "C");
 
     }
 }
